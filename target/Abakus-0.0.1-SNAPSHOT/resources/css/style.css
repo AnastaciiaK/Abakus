@@ -1,0 +1,150 @@
+TABLE {
+	border-collapse: collapse; /* ”бираем двойные линии между €чейками */
+	width: 300px; /* Ўирина таблицы */
+}
+
+TH, TD {
+	border: 1px solid black; /* ѕараметры рамки */
+	padding: 4px; /* ѕол€ вокруг текста */
+	font-family: 'Didact Gothic', sans-serif;
+	color: #555555;
+	font-size: 14px;
+	line-height: 22px;
+	background: #fff; /* ÷вет фона €чеек */
+	text-align: right;
+}
+
+TH {
+	background: #fdf268; /* ÷вет фона €чейки */
+}
+
+@import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+BODY {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+div {
+	padding: 1px 0;
+	/*border-bottom: 2px solid rgba(0,0,0,.05); */
+	text-align: center;
+}
+
+H3 {
+	font-family: 'Merriweather', serif;
+	font-size: 20px;
+	letter-spacing: 1px;
+	max-width: 700px;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	color: #465457;
+}
+
+.d1 h3 {
+	color: #F16246;
+}
+
+.d1 h3:before {
+	content: "";
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: #E5EDEA;
+	z-index: -1;
+}
+
+.d1 span {
+	background: white;
+	padding: 0 20px;
+}
+
+.d2 h3:before {
+	content: "";
+	position: absolute;
+	top: calc(50% - 5px);
+	left: 0;
+	right: 0;
+	height: 6px;
+	border-top: 2px solid #BBC9C9;
+	border-bottom: 2px solid #BBC9C9;
+	z-index: -1;
+}
+
+.d2 span {
+	background: white;
+	padding: 0 15px;
+}
+
+@import
+	url(https://fonts.googleapis.com/css?family=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic)
+	;
+
+.d6 h3 {
+	padding-bottom: 10px;
+}
+
+.d6 h3:after {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	margin-left: -15%;
+	width: 30%;
+	height: 2px;
+	background: #FA5F4C;
+}
+
+p {
+	font-family: 'Didact Gothic', sans-serif;
+	color: #555555;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.mybutton {
+  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчЄркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(212,75,56); /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+  border: 0 none transparent;
+   font-size: 14px;
+}
+
+.mybutton:hover {
+	background: rgb(232, 95, 76);
+} /* при наведении курсора мышки */
+.mybutton:active {
+	padding-top: 5px;
+	background: rgb(152, 15, 0);
+} /* при нажатии */
+
+
+.myinput{
+    font:13px Trebuchet MS, Arial, Helvetica, Sans-Serif;
+    color:#6B6B6B;
+/* отключаем бордюры у инпутов и текстового пол€ */
+    border: none;
+/* закругл€ем углы полей ввода */
+    -moz-border-radius:.3em;
+    -webkit-border-radius:.3em;
+    border-radius:.3em;		
+    background-color: #F7F7F7;
+    padding:3px;
+/* добавл€ем внутренние тени у инпутов и текстового пол€ */
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+    color: #5B5B5B;
+
+}
+.myinput {
+/* устанавливаем ширину инпутов */
+    width:50px;
+}
+

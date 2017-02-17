@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Абакус</title>
+</head>
+<head>
+<link rel='stylesheet' type='text/css'
+	href='/Abakus/resources/css/style.css'>
+</head>
+<div class='d6'>
+	<h3>
+		<span>Исходные данные:</span>
+	</h3>
+</div>
+
+<body>
+
+	<form action="abakusservlet" method="GET">
+
+
+		<p>
+			Количество примеров (столбцов): <input class="myinput" type="number"
+				min="1" max="15" value="7" placeholder="7" name="tablesCount">
+		</p>
+		<p>
+			Количество заданий (таблиц): <input class="myinput" type="number"
+				min="1" max="15" value="3" placeholder="3" name="exampleCouts">
+		</p>
+		<p>
+			Количество слагаемых (диапазон через точку с запятой) <input
+				class="myinput" type="text" value="3;9" placeholder="3;9"
+				name="bounds">
+		</p>
+		<p>
+			Ограничение на слагаемые (диапазон через точку с запятой) <input
+				class="myinput" type="text" value="-99;99" placeholder="-99;99"
+				id="maximin" name="maximin">
+		</p>
+		<p>
+			<input type="checkbox" name="leftHand" id="leftHand"
+				onClick="leftHandCheck(this)" value=" только левая рука">только левая рука
+		</p>
+		<p>
+			<input type="checkbox" name="rightHand" id="rightHand"
+				onClick="rightHandCheck(this)" value=" только правая рука">только правая рука
+		</p>
+		<p>
+			<input type="checkbox" name="miniAbakus" id="miniAbakus"
+				onClick="miniAbakusCheck(this)" value="миниабакус">миниабакус
+		</p>
+
+		<p>
+			<input type="checkbox" name="noTransaction1to10"
+				value=" отключить перенос разряда">отключить перенос разряда
+		</p>
+		<p>
+			<input type="checkbox" name="changeHands"  id="changeHands"
+				onclick="changeHandsCheck(this)" value= "две руки попеременно">две руки попеременно
+		</p>
+		<p>
+			<input type="checkbox" name="formulaCheck" value="формула"
+				onClick="formulaClick(this)"> формула <input class="myinput"
+				type="text" placeholder="-8" id="formula" name="formula" value="-3"
+				disabled="disabled" autofocus value="value text" onfocus="this.value = this.value;">
+		</p>
+		<p>
+			<input type="submit" class="mybutton" value="Сгенерировать примеры" />
+		</p>
+
+		<script>
+			function formulaClick(cb) {
+
+				if (cb.checked == false) {
+					document.getElementById("formula").setAttribute("disabled",
+							"disabled");
+				} else {
+					document.getElementById("formula").removeAttribute(
+							"disabled");
+					document.getElementById("formula").focus();
+				}
+			}
+			
+			function miniAbakusCheck(cb) {
+				if (cb.checked == true) {
+					if (document.getElementById("leftHand").checked==true)
+						{document.getElementById("maximin").value="-40;40";}
+					else
+						{document.getElementById("maximin").value="-4;4";}
+					
+				} 
+				else
+					if (document.getElementById("rightHand").checked==true)
+					{document.getElementById("maximin").value="-9;9";}
+					
+			}
+			
+			function changeHandsCheck(cb) {
+				if (cb.checked == true) {
+					document.getElementById("leftHand").checked=false;
+					document.getElementById("rightHand").checked=false;
+
+				}
+			}
+			
+			function leftHandCheck(cb) {
+				if (cb.checked == true) {
+					if (document.getElementById("leftHand").checked==true)
+					{document.getElementById("maximin").value="-40;40";}
+					document.getElementById("changeHands").checked=false;
+					document.getElementById("rightHand").checked=false;
+				} 
+				else
+					if (document.getElementById("miniAbakus").checked==true)
+					{document.getElementById("maximin").value="-4;4";}
+			}
+			
+			function rightHandCheck(cb) {
+				if (cb.checked == true) {
+					if (document.getElementById("miniAbakus").checked==false)
+						{document.getElementById("maximin").value="-9;9";}
+					
+					document.getElementById("changeHands").checked=false;
+					document.getElementById("leftHand").checked=false;
+				} 
+			}
+				
+			 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			 ga('create', 'UA-55697030-6', 'auto');
+			 ga('send', 'pageview');
+
+		</script>
+
+	</form>
+
+</body>
+</html>
