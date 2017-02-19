@@ -67,6 +67,11 @@ public class Generation {
 					iPreviousNumber = iPreviousNumber + lineArray[jj];
 				}
 			}
+			else
+			{
+				iPreviousNumber=generationNumber(-4, 4);
+			}
+
 			if (j % 3 == 0) {
 				itempNumber = generationByFormula(iPreviousNumber);
 			} else {
