@@ -192,7 +192,7 @@ public class Generation {
 	// sumChecks
 	protected boolean MoreThan0(int a, int b) {
 		boolean MoreThan0 = false;
-		if (a + b >= 0 && a + b <= 99)
+		if (a + b >= 0 && a + b <= MaxNumber)
 			MoreThan0 = true;
 		return MoreThan0;
 
